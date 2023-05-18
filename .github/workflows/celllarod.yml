@@ -2,7 +2,8 @@ name: Demostrador para Acciones GitHub
 on:
   workflow_dispatch:
   issues:
-    - opened
+    types:
+      - opened
   push:
   #cambiar columna??
 
