@@ -1,0 +1,16 @@
+name: Demostrador para Acciones GitHub
+on:
+  workflow_dispatch:
+  issues:
+    - opened
+  push:
+  #cambiar columna??
+
+jobs:
+  Enviar-notificacion-slack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar notificación a canal de Slack
+        uses: slackapi/slack-github-action@v1.24.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_URL }}
