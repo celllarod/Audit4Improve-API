@@ -16,15 +16,7 @@ jobs:
         with:
            payload: |
              {
-                "blocks": [
-                    {
-                      "type": "section",
-                      "text": {
-                           "type": "mrkdwn",
-                           "text": "**Nuevo Issue abierto:** ${{ github.event.issue.title}} \n**Descriptión:** "${{ github.event.issue.body}}"
-                       }   
-                    }
-                  ] 
+                "text": "Nuevo Issue abierto: ${{ github.event.issue.title}}, Descripción: ${{ github.event.issue.body}}"
              } 
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_URL }}
