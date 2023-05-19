@@ -14,11 +14,12 @@ jobs:
       - name: Enviar notificación a canal de Slack
         uses: slackapi/slack-github-action@v1.24.0
         with:
-          payload: |
+           payload: |
              {
-                "type": "mrkdwn",
-                "text": "**Nuevo Issue abierto:** ${{ github.event.issue.title}}",
-                "description": "${{ github.event.issue.body}}"
+                "text": {
+                   "type": "mrkdwn",
+                   "text": "**Nuevo Issue abierto:** ${{ github.event.issue.title}} \n**Descriptión:** "${{ github.event.issue.body}}"
+                }    
              } 
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_URL }}
