@@ -17,7 +17,7 @@ jobs:
           payload: |
              {
                 "type": "mrkdwn",
-                "text": "**Nuevo Issue abierto:** ${{ github.event.issue.title}},
+                "text": "**Nuevo Issue abierto:** ${{ github.event.issue.title}}",
                 "description": "${{ github.event.issue.body}}"
              } 
         env:
