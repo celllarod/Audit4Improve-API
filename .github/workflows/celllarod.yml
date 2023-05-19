@@ -17,7 +17,7 @@ jobs:
              {
                 "type": "mrkdwn",
                 "text": "**Nuevo Issue abierto:** ${{ github.event.issue.title}}
-                **Descripción: ${{ github.event.issue.body}}"
-             }
+                "description": "${{ github.event.issue.body}}"
+             } 
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_URL }}
